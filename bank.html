@@ -18,14 +18,14 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4 w-9/12 mx-auto mt-12 ">
             <div class="bg-green-400 p-8 rounded-xl">
                 <h4 class="text-2xl font-medium text-white"> Deposite</h4>
-                <h2 class="text-4xl font-medium text-white">$00</h2>
+                <h2 id="deposite-total" class="text-4xl font-medium text-white">$00</h2>
             </div>
             <div class="bg-yellow-400 p-8 rounded-xl">
-                <h4 class="text-2xl font-medium text-white"> Deposite</h4>
+                <h4 class="text-2xl font-medium text-white"> Withdraw</h4>
                 <h2 class="text-4xl font-medium text-white">$00</h2>
             </div>
             <div class="bg-violet-400 p-8 rounded-xl">
-                <h4 class="text-2xl font-medium text-white"> Deposite</h4>
+                <h4 class="text-2xl font-medium text-white">Balance</h4>
                 <h2 class="text-4xl font-medium text-white">$00</h2>
             </div>
         
@@ -33,12 +33,12 @@
     </section>
     <section>
         <div class="grid grid-cols-1 md:grid-cols-2  gap-4 w-9/12 mx-auto mt-12 ">
-        <div class="bg-fuchsia-500 p-8 rounded-xl">
+        <div class="bg-fuchsia-400 p-8 rounded-xl">
             <h4 class="text-2xl font-medium text-white mb-4"> Please Deposite</h4>
             
-                <input id="user-email" class="w-9/12 mb-3 px-3 " type="email" name="" id="" placeholder="$ Anount you want to Deposite">
+                <input id="deposite-email" class="w-9/12 mb-3 px-3 " type="text" name="" placeholder="$ Anount you want to Deposite">
                 
-                <button id="button-submit"
+                <button id="button-deposite"
                     class="rounded-lg bg-amber-600 px-8 py-2 block text-white font-medium  hover:bg-sky-700">Deposite</button>
             
         </div>
@@ -47,10 +47,12 @@
             <input id="user-email" class="w-9/12 mb-3 px-3 " type="email" name="" id="" placeholder="$ Anount you want to withdraw">
             
             <button id="button-submit"
-                class="rounded-lg bg-amber-600 px-8 py-2 block text-white font-medium  hover:bg-sky-700">Deposite</button>
+                class="rounded-lg bg-amber-600 px-8 py-2 block text-white font-medium  hover:bg-sky-700">Withdraw</button>
         </div>
         </div>
     </section>
 </main>
+
+<script src="/js/deposite.js"></script>
 </body>
 </html>
