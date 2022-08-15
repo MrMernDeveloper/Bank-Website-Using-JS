@@ -13,10 +13,10 @@ document.getElementById('button-submit').addEventListener('click', function () {
     
     // dont verify email and password on the client site
     if (email == 'admin@gmail.com' && password == 'admin') {
-        console.log('valid user')
+        window.location.href = 'bank.html';
     }
     else {
-        console.log('invalid Users')
+        console.log('invalid Username & password')
     }
 })
 
