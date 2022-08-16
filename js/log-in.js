@@ -1,24 +1,18 @@
-//added add event handler in submit button
+//submit button 
 document.getElementById('button-submit').addEventListener('click', function () {
-    
+    const inputEmail = document.getElementById('user-email');
+    const emailField = inputEmail.value;
+    const inputPassword = document.getElementById('user-password');
+    const inputField = inputPassword.value;
+    inputEmail.value = '';
+    inputPassword.value = '';
 
-// step 2 . get input from input text
-    //get email
-    const emailField = document.getElementById('user-email');
-    const email = emailField.value;
-
-    //get password
-    const passwordField = document.getElementById('user-password');
-    const password = passwordField.value;
-    
-    // dont verify email and password on the client site
-    if (email == 'admin@gmail.com' && password == 'admin') {
+    if (emailField == 'admin@gmail.com' && inputField == 'admin') {
         window.location.href = 'bank.html';
     }
     else {
-        console.log('invalid Username & password')
+        
+        return alert('Wrong user email and password');
     }
+    
 })
-
-
-

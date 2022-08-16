@@ -1,42 +1,37 @@
-//add clic handler in withdraw button
+
 document.getElementById('withdraw-button').addEventListener('click', function () {
-    
-    //get text value from text field
+    //get value from desposite text area
     const withdrawField = document.getElementById('withdraw-email');
-    const newWithdraw = parseFloat(withdrawField.value);
+    const withdrawAmount = parseFloat(withdrawField.value);
+
+    //clear text area
+    withdrawField.value = '';
     
-   
-    if (isNaN(newWithdraw) || newWithdraw <=0) {
-        alert('Please input your amount in valid number')
-        return;
+    if (isNaN(withdrawAmount) || withdrawAmount <=0) {
+        return alert('please input a valid number')
     }
 
-    //set withdraw field clear
-    withdrawField.value = '';
-
-    //calculate withdraw
+    // get withdraw value
     const withdrawText = document.getElementById('withdraw-field');
-    const withdrawTotal = parseFloat(withdrawText.innerText);
-    
+    const previousWithDraw = parseFloat(withdrawText.innerText);
 
-    // input previous  balance
-    const balance = document.getElementById('total-balance');
-    const previousBalance = parseFloat(balance.innerText)
+    //get balance input
+    const previousBalanceText = document.getElementById('total-balance');
+    const previousBalance = parseFloat(previousBalanceText.innerText);
 
-
-    //condition
-    if (newWithdraw > previousBalance) {
-        alert('You dont have enought money');
-        return;
-        
+    if (previousBalance < withdrawAmount) {
+        return alert('You dont Have enought money')
     }
 
     //calculate total withdraw
-    const totalWithdraw = newWithdraw + withdrawTotal;
+    const totalWithdraw = withdrawAmount + previousWithDraw;
     withdrawText.innerText = totalWithdraw;
 
-    //calculate final balance
-    const finalBalance = previousBalance - newWithdraw;
-    balance.innerText = finalBalance; 
+    
 
+    //calculate final balance
+    const finalBalance = previousBalance - withdrawAmount;
+    previousBalanceText.innerText = finalBalance;
+
+    
 })

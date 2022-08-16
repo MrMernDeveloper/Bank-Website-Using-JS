@@ -1,38 +1,27 @@
 
-//step-1: add event handler to the deosite button
+//deposite
 document.getElementById('button-deposite').addEventListener('click', function () {
- 
-   
+    //get value from deposite button
+    const inputDeposite = document.getElementById('deposite-email');
+    const depositeAmount = parseFloat(inputDeposite.value);
+    inputDeposite.value = '';
 
-    // get the deposite amount from the deposite input field
-    const depositeText = document.getElementById('deposite-email');
-    const newDepositeAmount = parseFloat(depositeText.value);
-
-    // clear deposite text
-    depositeText.value = ''
-
-    if (isNaN(newDepositeAmount) || newDepositeAmount <= 0) {
-        alert('Please input your amount in valid number')
-        return;
+    if (isNaN(depositeAmount) || depositeAmount<=0 ) {
+        return alert('please input valid a number');
     }
     
-   
+    // get value from deposite amount
+    const depositeText = document.getElementById('deposite-total');
+    const depositeCount = parseFloat(depositeText.innerText);
 
-    // get the current deposite total
-    const desposElement = document.getElementById('deposite-total');
-    const previousDepositeTotal = parseFloat(desposElement.innerText);
-    
-    //calculate deposite total
-    const depositeTotal = newDepositeAmount + previousDepositeTotal
-    desposElement.innerText = depositeTotal;
-    
-    // get balance current total
-    const balancetext = document.getElementById('total-balance');
-    const balanceTotal = parseFloat(balancetext.innerText);
+    // calculate deposite amount
+    const totalDeposite = depositeAmount + depositeCount;
+    depositeText.innerText = totalDeposite;
 
-    //calculate balance total
-    const currentBalance = balanceTotal  + newDepositeAmount;
-    balancetext.innerText = currentBalance;
+    //input balance
+    const balanceField = document.getElementById('total-balance');
+    const balaceAmount = parseFloat(balanceField.innerText);
+    const totalBalance = depositeAmount + balaceAmount;
+    balanceField.innerText = totalBalance;
 
-  
 })
