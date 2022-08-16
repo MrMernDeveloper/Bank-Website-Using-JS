@@ -7,7 +7,7 @@ document.getElementById('button-deposite').addEventListener('click', function ()
     // get the deposite amount from the deposite input field
     const depositeText = document.getElementById('deposite-email');
     const newDepositeAmount = parseFloat(depositeText.value);
-    console.log(typeof newDepositeAmount);
+    
    
 
     // get the current deposite total
@@ -19,7 +19,7 @@ document.getElementById('button-deposite').addEventListener('click', function ()
     // get balance current total
     const balancetext = document.getElementById('total-balance');
     const balanceTotal = parseFloat(balancetext.innerText);
-    const currentBalance = balanceTotal + newDepositeAmount;
+    const currentBalance = balanceTotal  + newDepositeAmount;
     balancetext.innerText = currentBalance;
 
    // clear deposite text
