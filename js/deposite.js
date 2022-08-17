@@ -1,27 +1,35 @@
+//get input from deposite button
 
-//deposite
-document.getElementById('button-deposite').addEventListener('click', function () {
-    //get value from deposite button
-    const inputDeposite = document.getElementById('deposite-email');
-    const depositeAmount = parseFloat(inputDeposite.value);
-    inputDeposite.value = '';
+document.getElementById('deposite-button').addEventListener('click', function () {
 
-    if (isNaN(depositeAmount) || depositeAmount<=0 ) {
-        return alert('please input valid a number');
+    // get deposit amount from input field
+    const depositeField = document.getElementById('deposite-input');
+    const depositSting = depositeField.value;
+    const depositeAmount = parseFloat(depositSting);
+
+    depositeField.value = '';
+
+    if (isNaN(depositeAmount) || depositeAmount <= 0) {
+        return alert('please input a valid number')
     }
-    
-    // get value from deposite amount
-    const depositeText = document.getElementById('deposite-total');
-    const depositeCount = parseFloat(depositeText.innerText);
 
-    // calculate deposite amount
-    const totalDeposite = depositeAmount + depositeCount;
+    //  det previous deposite from deposite text
+    const depositeText = document.getElementById('deposite-total');
+    const textString = depositeText.innerText;
+    const previousDeposite = parseFloat(textString);
+
+   // calculate Deposit
+    
+    const totalDeposite = depositeAmount + previousDeposite;
     depositeText.innerText = totalDeposite;
 
-    //input balance
-    const balanceField = document.getElementById('total-balance');
-    const balaceAmount = parseFloat(balanceField.innerText);
-    const totalBalance = depositeAmount + balaceAmount;
-    balanceField.innerText = totalBalance;
+    //get balace input from innertext balace
+    const balaceText = document.getElementById('balance-total');
+    const previousBalaceString = balaceText.innerText;
+    const previousBalance = parseFloat(previousBalaceString);
 
+    // calculate balance
+
+    const totalBalance = depositeAmount + previousBalance;
+    balaceText.innerText = totalBalance;
 })

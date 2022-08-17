@@ -11,8 +11,8 @@ document.getElementById('button-submit').addEventListener('click', function () {
         window.location.href = 'bank.html';
     }
     else {
-        
+
         return alert('Wrong user email and password');
     }
-    
+
 })

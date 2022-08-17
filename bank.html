@@ -4,56 +4,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bank Section</title>
-     <script src="https://cdn.tailwindcss.com"></script>
+    <title>Baper bank recape</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class=" bg-sky-50">
     <header>
-        <h1 class="text-5xl font-semibold text-center mt-6">Let's Get Some <span class="text-violet-600">Moooooney</span>
-            !!!
-        </h1>
-    </header>
-<main>
-    <section>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4 w-9/12 mx-auto mt-12 ">
-            <div class="bg-green-400 p-8 rounded-xl">
-                <h4 class="text-2xl font-medium text-white"> Deposite</h4>
-                <h2  class="text-4xl font-medium text-white">$<span id="deposite-total">00</span> </h2>
-            </div>
-            <div class="bg-yellow-400 p-8 rounded-xl">
-                <h4 class="text-2xl font-medium text-white"> Withdraw</h4>
-                <h2 class="text-4xl font-medium text-white">$<span id="withdraw-field">00</span></h2>
-            </div>
-            <div class="bg-violet-400 p-8 rounded-xl">
-                <h4  class="text-2xl font-medium text-white">Balance</h4>
-                <h2 class="text-4xl font-medium text-white">$<span id="total-balance">00</span> </h2>
-            </div>
-        
-        </div>
-    </section>
-    <section>
-        <div class="grid grid-cols-1 md:grid-cols-2  gap-4 w-9/12 mx-auto mt-12 ">
-        <div class="bg-fuchsia-400 p-8 rounded-xl">
-            <h4 class="text-2xl font-medium text-white mb-4"> Please Deposite</h4>
-            
-                <input id="deposite-email" class="w-9/12 mb-3 px-3 " type="number" name="" placeholder="$ Anount you want to Deposite">
+        <section class="  bg-sky-400  w-9/12 mx-auto my-4 py-8 rounded-lg hover:scale-105">
+            <div class=" md:flex items-center justify-evenly">
+                    <div class="flex justify-center">
+                        <img src="EmptyGlossyGrouse-max-1mb.gif" alt=""> 
+                    </div>
+                    <div>
+                        <h1 class="text-5xl font-bold text-center text-white ">Functional Demo-Bank!!</h1>
+                    </div>
+                        
+                    </div>
+                </div>
                 
-                <button id="button-deposite"
-                    class="rounded-lg bg-amber-600 px-8 py-2 block text-white font-medium  hover:bg-sky-700">Deposite</button>
-            
-        </div>
-        <div class="bg-sky-400 p-8 rounded-xl">
-            <h4 class="text-2xl font-medium text-white mb-4"> Please Withdraw</h4>
-            <input id="withdraw-email" class="w-9/12 mb-3 px-3 " type="number" name="" id="" placeholder="$ Anount you want to withdraw">
-            
-            <button id="withdraw-button"
-                class="rounded-lg bg-amber-600 px-8 py-2 block text-white font-medium  hover:bg-sky-700">Withdraw</button>
-        </div>
-        </div>
-    </section>
-</main>
+            </div>
+          
+        </section>
+        
+    </header>
+    <main>
+        <section>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-3/4 mx-auto text-white">
+            <div class=" p-8 bg-yellow-400 mt-8 rounded-lg hover:scale-105" >
+                <h4 class="text-2xl font-semibold">Deposit</h4>
+                <h2 class="text-4xl font-semibold ">$<span id="deposite-total">00</span></h2>
+            </div>
+            <div class=" p-8 bg-red-400 mt-8 rounded-lg hover:scale-105">
+                <h4 class="text-2xl font-semibold">withdraw</h4>
+                <h2 class="text-4xl font-semibold ">$<span id="withdraw-total">00</span></h2>
+            </div>
+            <div class=" p-8 bg-blue-400 mt-8 rounded-lg hover:scale-105">
+                <h4 class="text-2xl font-semibold">Balance</h4>
+                <h2 class="text-4xl font-semibold ">$<span id="balance-total">00</span></h2>
+            </div>
+            <div></div>
+            <div></div>
+            </div>
+        </section>
+        <section class="w-9/12 mx-auto mt-8 mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2  gap-4">
+                <div class="bg-violet-400 p-8 rounded-lg  ">
+                    <h3 class="text-3xl  text-white font-medium">Your Deposit</h3>
+                    <input id="deposite-input" class=" mt-3 px-8 py-1 w-3/4 rounded-lg" type="number" placeholder="$ Amount you have to deposite">
+                    <button  id="deposite-button" class="block bg-sky-600 px-8 py-2 rounded-lg hover:bg-rose-400 mt-3 text-white font-medium"> Deposite</button>
+                </div>
+                <div class="bg-cyan-400 p-8 rounded-lg  ">
+                    <h3 class="text-3xl  text-white font-medium">Your withdraw</h3>
+                    <input id="withdraw-input" class=" mt-3 px-8 py-1 w-3/4 rounded-lg" type="number" placeholder="$ Amount you have to deposite">
+                    <button id="withdraw-button"
+                        class="block bg-sky-600 px-8 py-2 rounded-lg hover:bg-rose-400 mt-3 text-white font-medium"> withdraw</button>
+                </div>
 
-<script src="js/deposite.js"></script>
-<script src="js/withdraw.js"></script>
+
+            </div>
+        </section>
+    </main>
+    <footer class=" text-center py-8 font-medium text-slate-500 "> <small> © 2022 - Rakib Hasan,, A junior web developer</small></footer>
+    
+    <script src="js/deposite.js"></script>
+    <script src="js/withdraw.js"></script>
 </body>
 </html>

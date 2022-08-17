@@ -1,37 +1,43 @@
 
+// get value from withdraw button
 document.getElementById('withdraw-button').addEventListener('click', function () {
-    //get value from desposite text area
-    const withdrawField = document.getElementById('withdraw-email');
-    const withdrawAmount = parseFloat(withdrawField.value);
-
-    //clear text area
-    withdrawField.value = '';
     
-    if (isNaN(withdrawAmount) || withdrawAmount <=0) {
-        return alert('please input a valid number')
+    // get value from deposite input field
+    const depositField = document.getElementById('withdraw-input');
+    const depositString = depositField.value;
+    const depositeAmount = parseFloat(depositString);
+
+     // clear deposit field
+    depositField.value = '';
+
+    //error handling
+    if (isNaN(depositeAmount) || depositeAmount <= 0) {
+        return alert('please input a valid number');
     }
 
-    // get withdraw value
-    const withdrawText = document.getElementById('withdraw-field');
-    const previousWithDraw = parseFloat(withdrawText.innerText);
+    // get value from withdraw field
 
-    //get balance input
-    const previousBalanceText = document.getElementById('total-balance');
-    const previousBalance = parseFloat(previousBalanceText.innerText);
+    const depositeText = document.getElementById('withdraw-total');
+    const previousDepositString = depositeText.innerText;
+    const previousDeposite = parseFloat(previousDepositString);
 
-    if (previousBalance < withdrawAmount) {
-        return alert('You dont Have enought money')
+ 
+
+    // get balance text
+    const balanceText = document.getElementById('balance-total');
+    const previousBalanceString = balanceText.innerText;
+    const previousBalance = parseFloat(previousBalanceString);
+
+    if (depositeAmount > previousBalance) {
+        
+        return alert('You dont have enough money')
     }
 
-    //calculate total withdraw
-    const totalWithdraw = withdrawAmount + previousWithDraw;
-    withdrawText.innerText = totalWithdraw;
+    //calculate total deposite
+    const totalDeposit = depositeAmount + previousDeposite;
+    depositeText.innerText = totalDeposit;
 
-    
-
-    //calculate final balance
-    const finalBalance = previousBalance - withdrawAmount;
-    previousBalanceText.innerText = finalBalance;
-
-    
+    // calculate finalBalance
+    const finalBalance = previousBalance - depositeAmount;
+    balanceText.innerText = finalBalance;
 })
